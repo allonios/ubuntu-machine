@@ -1,0 +1,89 @@
+q# Python bytecode:
+*.py[co]
+production.py
+
+# Packaging files:
+*.egg*
+
+# Sphinx docs:
+build
+
+# SQLite3 database files:
+*.db
+
+# Translation compiled files:
+*.mo
+
+#SQL
+*.sql
+
+# Logs:
+*.log
+
+# Eclipse
+.project
+.pydevproject
+.settings
+
+# Linux Editors
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+*.swp
+*.swo
+
+# Mac
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Idea
+.idea
+
+#Vagrant
+.vagrant
+
+node_modules
+bower_components
+
+#static and media
+mofa/media
+mofa/assets
+coverage/
+htmlcov/
+
+mofa/rest_framework
+celerybeat-schedule
+celeryconf/
+mofa_frontend/node_modules-bak/
+mofa_frontend/app/scripts/locales/frontend.pot
+mofa/mofa/settings/local.py
+mofa/geoip/
+mofa/saml/settings.json
+mofa/saml/advanced_settings.json
+
+##whoosh
+whoosh_index/
+
+.coverage
+.env
+env/
+venv/
+.venv/
+
+# csv export
+dm_users.csv
+/mariadb/
+/elasticsearch/
+.vscode
+
+docker.backup.sql.gz
+docker.backup.sql
