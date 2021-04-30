@@ -2,7 +2,7 @@
 
 # mariadb server
 sudo apt install mariadb-server
-sudo mariadb < mysql_setup.sql
+# sudo mariadb < mysql_setup.sql
 
 # postgresql:
 ################################################################################################################################################
