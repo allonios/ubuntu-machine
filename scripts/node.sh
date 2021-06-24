@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # nodejs:
+# using old versions for some legacy projects.
 ###############################################################################################################################################
 sudo curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh

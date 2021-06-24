@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # mariadb server
-sudo apt install mariadb-server
+sudo apt install mariadb-server -y
 # sudo mariadb < mysql_setup.sql
 
 # postgresql:
@@ -23,7 +23,7 @@ sudo apt-get -y install postgresql
 # mongodb
 ###############################################################################################################################################
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
-sudo apt-get install gnupg
+sudo apt-get install gnupg -y
 wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
 echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
 sudo apt-get update

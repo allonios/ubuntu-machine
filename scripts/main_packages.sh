@@ -14,12 +14,12 @@ python3 -m pip install babi
 
 # tkinter
 ###############################################################################################################################################
-sudo apt-get install python-tk python3-tk tk-dev
+sudo apt-get install python-tk python3-tk tk-dev -y
 ###############################################################################################################################################
 
 # Papirus icons:
 ###############################################################################################################################################
-sudo add-apt-repository ppa:papirus/papirus
+sudo add-apt-repository ppa:papirus/papirus -y
 sudo apt install papirus-icon-theme -y
 ###############################################################################################################################################
 
@@ -27,7 +27,7 @@ sudo apt install papirus-icon-theme -y
 ###############################################################################################################################################
 git config --global alias.co checkout
 git config --global alias.br branch
-git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.sg stage
+git config --global alias.ci commit
 ###############################################################################################################################################
