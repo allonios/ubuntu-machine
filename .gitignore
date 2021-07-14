@@ -87,3 +87,5 @@ dm_users.csv
 
 docker.backup.sql.gz
 docker.backup.sql
+
+kite-installer

@@ -21,6 +21,6 @@ sudo apt install diodon -y
 # vscode, spotify, whatsapp
 ###############################################################################################################################################
 sudo snap install spotify
-sudo snap install code
+sudo snap install code --classic
 sudo snap install whatsapp-for-linux
 ###############################################################################################################################################
