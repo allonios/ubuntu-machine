@@ -1,11 +1,29 @@
 #!/usr/bin/env bash
 
-# main packages
+# update git
 ###############################################################################################################################################
 sudo add-apt-repository ppa:git-core/ppa -y
 sudo apt install git -y
-sudo apt install python3-pip python3-venv python-setuptools python3-dev python-dev
-sudo apt install dconf-editor compizconfig-settings-manager gnome-tweak-tool gparted software-properties-common libpq-dev build-essential snapd  vim vlc zip unzip rar unrar sqlite3 libsqlite3-dev default-libmysqlclient-dev sqlitebrowser qbittorrent openvpn network-manager-openvpn-gnome build-essential libssl-dev tree gnome-shell-extension-draw-on-your-screen simplescreenrecorder -y
+###############################################################################################################################################
+
+# python
+###############################################################################################################################################
+sudo apt install python3-pip python3-venv python-setuptools python3-setuptools python3-dev python-dev
+###############################################################################################################################################
+
+# tools
+###############################################################################################################################################
+sudo apt install dconf-editor compizconfig-settings-manager gnome-tweak-tool gparted software-properties-common snapd vim zip unzip rar unrar openvpn network-manager-openvpn-gnome tree -y
+###############################################################################################################################################
+
+# libs
+###############################################################################################################################################
+sudo apt install libssl-dev zlib1g-dev libbz2-dev libreadline-dev llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libpq-dev build-essential libssl-dev -y
+###############################################################################################################################################
+
+# pyenv
+###############################################################################################################################################
+curl https://pyenv.run | bash
 ###############################################################################################################################################
 
 # babi editor
