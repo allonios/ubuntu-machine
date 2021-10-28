@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-cp ../.themes ~/
-cp ../.bash_aliases ~/
-cp ../.bashrc ~/
-cp ../tensor_test.py ~/
+cp -r ../.themes ~/
+cp -r ../.bash_aliases ~/
+cp -r ../.bashrc ~/
+cp -r ../tensor_test.py ~/
 # babi theme setup
-mkdir mkdir ~/.config/babi
-cp ../theme.json ~/.config/babi
+mkdir -p ~/.config/babi/
+cp -r ../theme.json ~/.config/babi
