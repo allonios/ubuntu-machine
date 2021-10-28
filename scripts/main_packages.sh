@@ -13,12 +13,12 @@ sudo apt install python3-pip python3-venv python-setuptools python3-setuptools p
 
 # tools
 ###############################################################################################################################################
-sudo apt install dconf-editor compizconfig-settings-manager gnome-tweak-tool gparted software-properties-common snapd vim zip unzip rar unrar openvpn network-manager-openvpn-gnome tree -y
+sudo apt install dconf-editor compizconfig-settings-manager gnome-tweak-tool gparted software-properties-common snapd vim zip unzip rar unrar openvpn network-manager-openvpn-gnome tree screen -y
 ###############################################################################################################################################
 
 # libs
 ###############################################################################################################################################
-sudo apt install libssl-dev zlib1g-dev libbz2-dev libreadline-dev llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libpq-dev build-essential libssl-dev -y
+sudo apt install libssl-dev zlib1g-dev libbz2-dev libreadline-dev llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libpq-dev build-essential libssl-dev libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 libncursesw5-dev -y
 ###############################################################################################################################################
 
 # pyenv

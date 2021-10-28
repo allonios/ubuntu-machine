@@ -6,6 +6,12 @@
 # change it to use preexec or precmd
 # See also https://github.com/rcaloras/bash-preexec
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -197,9 +203,43 @@ md(){
     mkdir $1
     cd $1
 }
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv 1>/dev/null 2>&1; then
- eval "$(pyenv init -)"
-fi
 
+# activate python virtual environment
+venv(){
+    source .venv/bin/activate
+}
+
+
+# git pusher function
+push(){
+    if [ "0" == `ifconfig | grep tun0 | wc -l` ]; then
+        echo "======================================================"
+        echo "vpn off"
+        echo "press enter after the vpn is connected and re-run the command."
+        echo "======================================================"
+        sudo -b openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --auth-user-pass ~/ubuntu_machine/VPN/pass_kw.txt
+    else
+        echo "vpn on"
+        git push
+        sudo killall openvpn
+    fi
+}
+
+pull(){
+    push
+}
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/allonios/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/allonios/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/allonios/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/allonios/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
