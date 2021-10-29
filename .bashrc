@@ -6,12 +6,6 @@
 # change it to use preexec or precmd
 # See also https://github.com/rcaloras/bash-preexec
 
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv init --path)"
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -243,3 +237,11 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
+
+NLTK_DATA="~/nltk_data/"
