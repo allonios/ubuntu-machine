@@ -244,4 +244,15 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv init --path)"
 
+# nltk data directory
 NLTK_DATA="~/nltk_data/"
+
+# tensorflow container commands
+
+tensorflow_jupyter(){
+    docker run --gpus all -it -p 8889:8888 -v $1:/tf tensorflow/tensorflow:latest-gpu-py3-jupyter
+}
+
+tensorflow_bash(){
+    docker run --gpus all -it tensorflow/tensorflow:latest-gpu-py3-jupyter bash
+}
