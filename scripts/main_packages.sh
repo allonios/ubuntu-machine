@@ -8,12 +8,12 @@ sudo apt install git -y
 
 # python
 ###############################################################################################################################################
-sudo apt install python3-pip python3-venv python-setuptools python3-setuptools python3-dev python-dev
+sudo apt install python3-pip python3-venv python-setuptools python3-setuptools python3-dev python-dev -y
 ###############################################################################################################################################
 
 # tools
 ###############################################################################################################################################
-sudo apt install dconf-editor compizconfig-settings-manager gnome-tweak-tool gparted software-properties-common snapd vim zip unzip rar unrar openvpn network-manager-openvpn-gnome tree screen -y
+sudo apt install dconf-editor compizconfig-settings-manager gnome-tweaks gparted software-properties-common snapd vim zip unzip rar unrar openvpn network-manager-openvpn-gnome tree screen -y
 ###############################################################################################################################################
 
 # libs
