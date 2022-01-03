@@ -171,11 +171,9 @@ xterm*|rxvt*)
 *)
     ;;
 esac
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
+# dotnet sdk
+export PATH="/home/allonios/.dotnet/tools/:$PATH"
 
 # KN transfer:
 transfer(){
@@ -209,7 +207,7 @@ push(){
     if [ "0" == `ifconfig | grep tun0 | wc -l` ]; then
         echo "======================================================"
         echo "vpn off"
-        echo "press enter after the vpn is connected and re-run the command."
+        echo "press enter after vpn is connected and re-run the command."
         echo "======================================================"
         sudo -b openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --auth-user-pass ~/ubuntu_machine/VPN/pass_kw.txt
     else
@@ -220,7 +218,17 @@ push(){
 }
 
 pull(){
-    push
+    if [ "0" == `ifconfig | grep tun0 | wc -l` ]; then
+        echo "======================================================"
+        echo "vpn off"
+        echo "press enter after vpn is connected and re-run the command."
+        echo "======================================================"
+        sudo -b openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --auth-user-pass ~/ubuntu_machine/VPN/pass_kw.txt
+    else
+        echo "vpn on"
+        git pull
+        sudo killall openvpn
+    fi
 }
 
 # >>> conda initialize >>>
@@ -256,3 +264,7 @@ tensorflow_jupyter(){
 tensorflow_bash(){
     docker run --gpus all -it tensorflow/tensorflow:latest-gpu-py3-jupyter bash
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
