@@ -224,7 +224,7 @@ vpn(){
 
 # activate python virtual environment
 venv(){
-    source "${1-./}.venv/bin/activate"
+    source "${1-.venv}/bin/activate"
 }
 
 # git pusher function
