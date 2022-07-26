@@ -10,12 +10,13 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 # edit the terminal font
 # ref: https://elementaryos.stackexchange.com/questions/1149/how-can-i-change-the-default-terminal-font
 ###############################################################################################################################################
-gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains mono 12'
+cp ../fonts/JetBrainsMono-Medium.ttf ~/.local/share/fonts/
+gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains mono 14'
 ###############################################################################################################################################
 
 # enable hibernate:
 ###############################################################################################################################################
-sudo apt install pm-utils -y && sudo pm-hibernate -y
+# sudo apt install pm-utils -y && sudo pm-hibernate -y
 ###############################################################################################################################################
 
 
