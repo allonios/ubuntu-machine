@@ -8,9 +8,9 @@ alias cls='clear'
 # typos
 alias dc=cd
 alias grpe=grep
-alias nano=~/opt/venv/bin/babi
-alias naon=babi
 alias chmox=chmod
+alias gti=git
+alias got=git
 
 # stuff
 alias wtf="echo 'wtf indeed.'"
