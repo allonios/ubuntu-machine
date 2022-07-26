@@ -8,17 +8,17 @@ sudo apt install git -y
 
 # python
 ###############################################################################################################################################
-sudo apt install python3-pip python3-venv python-setuptools python3-setuptools python3-dev python-dev -y
+sudo apt install python3-pip python3-venv python3-setuptools python3-dev -y
 ###############################################################################################################################################
 
 # tools
 ###############################################################################################################################################
-sudo apt install dconf-editor compizconfig-settings-manager gnome-tweaks gparted software-properties-common snapd vim zip unzip rar unrar openvpn network-manager-openvpn-gnome tree screen -y
+sudo apt install dconf-editor compizconfig-settings-manager gnome-tweaks gparted software-properties-common snapd vim zip unzip rar unrar tree screen -y
 ###############################################################################################################################################
 
 # libs
 ###############################################################################################################################################
-sudo apt install libssl-dev zlib1g-dev libbz2-dev libreadline-dev llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libpq-dev build-essential libssl-dev libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 libncursesw5-dev -y
+sudo apt install libssl-dev zlib1g-dev libbz2-dev libreadline-dev llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev libpq-dev build-essential libssl-dev libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6 libncursesw5-dev libsqlite3-dev -y
 ###############################################################################################################################################
 
 # pyenv
@@ -40,6 +40,7 @@ sudo apt-get install python-tk python3-tk tk-dev -y
 ###############################################################################################################################################
 sudo add-apt-repository ppa:papirus/papirus -y
 sudo apt install papirus-icon-theme -y
+sudo add-apt-repository --remove ppa:papirus/papirus -y
 ###############################################################################################################################################
 
 # git aliases

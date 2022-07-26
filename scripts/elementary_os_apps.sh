@@ -3,7 +3,7 @@
 # add elemenatry os repository
 ###############################################################################################################################################
 # sudo add-apt-repository ppa:elementary-os/stable -y
-sudo bash -c 'echo "deb http://ppa.launchpad.net/elementary-os/stable/ubuntu/ bionic main" > /etc/apt/sources.list.d/elementary-os-ubuntu-stable-bionic.list'
+sudo bash -c 'echo "deb https://ppa.launchpadcontent.net/elementary-os/stable/ubuntu/ bionic main" > /etc/apt/sources.list.d/elementary-os-ubuntu-stable-bionic.list'
 sudo apt update
 ###############################################################################################################################################
 
