@@ -1,0 +1,63 @@
+{
+    "~/Applications": {
+        "zip_filename": "Applications.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/anaconda3": {
+        "zip_filename": "anaconda3.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/Documents": {
+        "zip_filename": "Documents.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/Downloads": {
+        "zip_filename": "Downloads.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/.ssh": {
+        "zip_filename": "ssh.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": true
+    },
+    "~/PycharmProjects": {
+        "zip_filename": "PycharmProjects.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/GolandProjects": {
+        "zip_filename": "GolandProjects.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/WebstormProjects": {
+        "zip_filename": "WebstormProjects.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/Work-Projects": {
+        "zip_filename": "Work-Projects.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/Workspace": {
+        "zip_filename": "Workspace.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/.local/share/JetBrains": {
+        "zip_filename": "JetBrains.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    },
+    "~/.config": {
+        "zip_filename": "config.zip",
+        "destination": "/media/allonios/Data/Linux-Machine/",
+        "skip_existing": false
+    }
+
+}
