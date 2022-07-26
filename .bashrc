@@ -175,6 +175,9 @@ esac
 # dotnet sdk
 export PATH="/home/allonios/.dotnet/tools/:$PATH"
 
+# golang
+export PATH=$PATH:/usr/local/go/bin
+
 # KN transfer:
 transfer(){
     if [ $# -eq 0 ]; then
@@ -196,11 +199,33 @@ md(){
     cd $1
 }
 
-# activate python virtual environment
-venv(){
-    source .venv/bin/activate
+vpn(){
+	if [ $1 == "kw" ] || [ $1 == "KW" ];
+	then
+		sudo openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --daemon
+	elif [ $1 == "bh" ] || [ $1 == "BH" ];
+	then
+		sudo openvpn --config ~/ubuntu_machine/VPN/KN-BH.ovpn --daemon
+    elif [ $1 == "stop" ] || [ $1 == "off" ];
+    then
+        sudo killall openvpn
+    elif [ $1 == "st" ] || [ $1 == "status" ];
+    then
+        if [ "0" == `ifconfig | grep tun0 | wc -l` ];
+        then
+            echo "VPN OFF"
+        else
+            echo "VPN ON"
+        fi
+	else
+		echo "Invalid or Missing Argument"
+	fi
 }
 
+# activate python virtual environment
+venv(){
+    source "${1-./}.venv/bin/activate"
+}
 
 # git pusher function
 push(){
