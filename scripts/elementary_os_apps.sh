@@ -4,6 +4,7 @@
 ###############################################################################################################################################
 # sudo add-apt-repository ppa:elementary-os/stable -y
 sudo bash -c 'echo "deb https://ppa.launchpadcontent.net/elementary-os/stable/ubuntu/ bionic main" > /etc/apt/sources.list.d/elementary-os-ubuntu-stable-bionic.list'
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BF36996C4E1F8A59
 sudo apt update
 ###############################################################################################################################################
 
