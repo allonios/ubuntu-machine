@@ -113,14 +113,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# If this is an xterm set more declarative titles 
+# If this is an xterm set more declarative titles
 # "dir: last_cmd" and "actual_cmd" during execution
 # If you want to exclude a cmd from being printed see line 156
 case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\$(print_title)\a\]$PS1"
     __el_LAST_EXECUTED_COMMAND=""
-    print_title () 
+    print_title ()
     {
         __el_FIRSTPART=""
         __el_SECONDPART=""
@@ -143,7 +143,7 @@ xterm*|rxvt*)
             __el_SECONDPART="${__el_SECONDPART%% *}"
         else
             __el_SECONDPART="${__el_LAST_EXECUTED_COMMAND%% *}"
-        fi 
+        fi
         printf "%s: %s" "$__el_FIRSTPART" "$__el_SECONDPART"
     }
     put_title()
@@ -151,13 +151,13 @@ xterm*|rxvt*)
         __el_LAST_EXECUTED_COMMAND="${BASH_COMMAND}"
         printf "\033]0;%s\007" "$1"
     }
-    
+
     # Show the currently running command in the terminal title:
     # http://www.davidpashley.com/articles/xterm-titles-with-bash.html
     update_tab_command()
     {
         # catch blacklisted commands and nested escapes
-        case "$BASH_COMMAND" in 
+        case "$BASH_COMMAND" in
             *\033]0*|update_*|echo*|printf*|clear*|cd*)
             __el_LAST_EXECUTED_COMMAND=""
                 ;;
@@ -172,11 +172,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# dotnet sdk
-export PATH="/home/allonios/.dotnet/tools/:$PATH"
-
-# golang
-export PATH=$PATH:/usr/local/go/bin
 
 # KN transfer:
 transfer(){
@@ -256,6 +251,32 @@ pull(){
     fi
 }
 
+# tensorflow container commands
+
+tensorflow_jupyter(){
+    docker run --gpus all -it -p 8889:8888 -v $1:/tf tensorflow/tensorflow:latest-gpu-py3-jupyter
+}
+
+tensorflow_bash(){
+    docker run --gpus all -it tensorflow/tensorflow:latest-gpu-py3-jupyter bash
+}
+
+# Env Vars
+
+# babi editor.
+export PATH=$PATH:/home/allonios/.local/bin
+
+# dotnet sdk
+export PATH="/home/allonios/.dotnet/tools/:$PATH"
+
+# golang
+export PATH=$PATH:/usr/local/go/bin
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/allonios/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -279,20 +300,3 @@ eval "$(pyenv init --path)"
 
 # nltk data directory
 NLTK_DATA="~/nltk_data/"
-
-# tensorflow container commands
-
-tensorflow_jupyter(){
-    docker run --gpus all -it -p 8889:8888 -v $1:/tf tensorflow/tensorflow:latest-gpu-py3-jupyter
-}
-
-tensorflow_bash(){
-    docker run --gpus all -it tensorflow/tensorflow:latest-gpu-py3-jupyter bash
-}
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# babi editor.
-export PATH=$PATH:/home/allonios/.local/bin
