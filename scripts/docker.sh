@@ -12,7 +12,7 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-compose -y
 
 sudo systemctl start docker
 sudo systemctl enable docker
@@ -26,9 +26,3 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 ###########################################################################
-
-
-# lazydocker
-###############################################################################################################################################
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-###############################################################################################################################################
