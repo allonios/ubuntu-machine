@@ -1,6 +1,6 @@
 ubuntu_machine is a repo that aims to replicate the installation of my current ubuntu-based distro.
 
-there are a collection of useful tools for installing packages, extracting config and common files (like an edited
+there is a collection of useful tools for installing packages, extracting config and common files (like an edited
 .bashrc and a themes directory) and backing-up directories.
 
 # Table of Contents
@@ -68,24 +68,32 @@ used to run a tensorflow docker container and start a jupyter notebook.
 used to run a tensorflow docker container and attach that to bash.
 
 ## `vpn` command
+
 used to run openvpn based on a configuration file
 
 ### VPN Command Configuration
-unfortunately right now the configuration is considered to be a bit on the fixed side, but still simple enough and can be configured using the following instructions:
+
+unfortunately right now the configuration is considered to be a bit on the fixed side, but still simple enough and can
+be configured using the following instructions:
+
 1. in the cloned repo, create a folder called VPN.
 2. place your vpn config file there + a text file containing username and password if it exists.
 3. in the openvpn config file add the following options for password:
+
 ```shell
 auth-user-pass path/to/password/text/file.
 ```
+
 4. in .bashrc edit vpn function to run your password
-example:
-configuration file called vpn-x.ovpn can be added like the following
+   example:
+   configuration file called vpn-x.ovpn can be added like the following
+
 ```shell
 if [ $1 == "x" ] || [ $1 == "X" ];
     then
         sudo openvpn --config ~/ubuntu_machine/VPN/vpn-x.ovpn --daemon
 ```
+
 running `vpn x` or `vpn X` will start the vpn file.
 
 running `vpn st` will show the current status for the vpn (on or off).
@@ -93,6 +101,7 @@ running `vpn st` will show the current status for the vpn (on or off).
 running `vpn off` or `vpn stop` with kill the openvpn process.
 
 ## `push` command
+
 used to run a VPN before pushing to a git remote.
 
 configured in the same manner as `vpn` command.
@@ -125,7 +134,50 @@ the following paths where added to PATH:
 
 # Scripts
 
-each element in the scripts directory serves a certain functionality, and will be explained briefly here
+each element in the scripts directory serves a certain functionality, and will be explained briefly here.
+
+## `Backup`:
+
+### Prerequisites
+
+python3
+
+### Functionality
+
+used to backup certain directory or directories using a configuration json file.
+
+the specified directory will be compressed and copied to a destination directory.
+
+#### `config.json` format
+
+each attribute in the root object represents a directory path to backup.
+
+this attribute (directory path) should specify an object that represents settings for the backup process.
+
+```json
+{
+    "dir1/to/backup": {
+        "zip_filename": "dir1.zip",
+        "destination": "dist/path/",
+        "skip_existing": false
+    },
+    "dir2/to/backup": {
+        "zip_filename": "dir2.zip",
+        "destination": "dist/path/",
+        "skip_existing": true
+    }
+}
+```
+
+directory object attributes:
+
+|Attribute| Type    |                                                                   | Description                                                                                                                                                                                                                                                                                                          |
+|---|---------|-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|`zip_filename`| strings | used to specify compressed directory filename                     |
+|`destination`| string  | represents backup destination (where the zip file will be copied) |
+|`skip_existing`| bool    | if true, skip the directory if it exists in the destination path  |
+
+run `backup_from_config.py` to execute.
 
 ## `apps.sh`
 
