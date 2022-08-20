@@ -229,7 +229,7 @@ push(){
         echo "vpn off"
         echo "press enter after vpn is connected and re-run the command."
         echo "======================================================"
-        sudo -b openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --auth-user-pass ~/ubuntu_machine/VPN/pass_kw.txt
+        sudo -b openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --daemon
     else
         echo "vpn on"
         git push
