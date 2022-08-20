@@ -171,7 +171,7 @@ this attribute (directory path) should specify an object that represents setting
 
 directory object attributes:
 
-|Attribute| Type    Description|                                                                   |                                                                                                                                                                                                                                                                                                           
+|Attribute| Type    |                                 Description                                  |                                                                                                                                                                                                                                                                                                           
 |---|-------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |`zip_filename`| strings | used to specify compressed directory filename                     |
 |`destination`| string  | represents backup destination (where the zip file will be copied) |
