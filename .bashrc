@@ -194,65 +194,12 @@ md(){
     cd $1
 }
 
-vpn(){
-	if [ $1 == "kw" ] || [ $1 == "KW" ];
-	then
-		sudo openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --daemon
-	elif [ $1 == "bh" ] || [ $1 == "BH" ];
-	then
-		sudo openvpn --config ~/ubuntu_machine/VPN/KN-BH.ovpn --daemon
-    elif [ $1 == "stop" ] || [ $1 == "off" ];
-    then
-        sudo killall openvpn
-    elif [ $1 == "st" ] || [ $1 == "status" ];
-    then
-        if [ "0" == `ifconfig | grep tun0 | wc -l` ];
-        then
-            echo "VPN OFF"
-        else
-            echo "VPN ON"
-        fi
-	else
-		echo "Invalid or Missing Argument"
-	fi
-}
-
 # activate python virtual environment
 venv(){
     source "${1-.venv}/bin/activate"
 }
 
-# git pusher function
-push(){
-    if [ "0" == `ifconfig | grep tun0 | wc -l` ]; then
-        echo "======================================================"
-        echo "vpn off"
-        echo "press enter after vpn is connected and re-run the command."
-        echo "======================================================"
-        sudo -b openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --daemon
-    else
-        echo "vpn on"
-        git push
-        sudo killall openvpn
-    fi
-}
-
-pull(){
-    if [ "0" == `ifconfig | grep tun0 | wc -l` ]; then
-        echo "======================================================"
-        echo "vpn off"
-        echo "press enter after vpn is connected and re-run the command."
-        echo "======================================================"
-        sudo -b openvpn --config ~/ubuntu_machine/VPN/KN-KW.ovpn --auth-user-pass ~/ubuntu_machine/VPN/pass_kw.txt
-    else
-        echo "vpn on"
-        git pull
-        sudo killall openvpn
-    fi
-}
-
 # tensorflow container commands
-
 tensorflow_jupyter(){
     docker run --gpus all -it -p 8889:8888 -v $1:/tf tensorflow/tensorflow:latest-gpu-py3-jupyter
 }
@@ -300,3 +247,4 @@ eval "$(pyenv init --path)"
 
 # nltk data directory
 NLTK_DATA="~/nltk_data/"
+
